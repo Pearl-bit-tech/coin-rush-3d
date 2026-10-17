@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Coin Rush 3D</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Three.js from jsDelivr (a CDN start.ng accepts), pinned to one version -->
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <header id="hud">
+    <div>
+      <h1>Coin Rush 3D</h1>
+      <p id="player">Loading player…</p>
+    </div>
+    <div class="stats">
+      <div><small>SCORE</small><b id="score">0</b></div>
+      <div><small>TIME</small><b id="time">60</b></div>
+    </div>
+  </header>
+
+  <div id="overlay">
+    <div class="card">
+      <h2 id="title">Coin Rush 3D</h2>
+      <p id="msg">Collect as many coins as you can in 60 seconds.<br>Move with WASD or the arrow keys.</p>
+      <p id="final" hidden>Final score: <b id="finalScore">0</b></p>
+      <button id="startBtn">Start</button>
+      <a id="signin" hidden>Sign in with start.ng</a>
+    </div>
+  </div>
+
+  <button id="restartBtn" hidden>Restart</button>
+
+  <div id="dpad">
+    <button data-dir="up">▲</button>
+    <button data-dir="left">◀</button>
+    <button data-dir="down">▼</button>
+    <button data-dir="right">▶</button>
+  </div>
+
+  <script type="module" src="./js/game.js"></script>
+</body>
+</html>

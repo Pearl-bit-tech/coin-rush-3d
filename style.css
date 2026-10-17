@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #1b2338; color: #fffefa;
+  font-family: system-ui, sans-serif; touch-action: none; user-select: none; -webkit-user-select: none; }
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+
+#hud { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 12px; padding: max(12px, env(safe-area-inset-top)) 16px 12px; pointer-events: none; }
+#hud h1 { margin: 0; font-size: 20px; color: #ffd84d; }
+#hud p { margin: 2px 0 0; font-size: 13px; opacity: .85; }
+.stats { display: flex; gap: 10px; }
+.stats div { background: rgba(20,26,45,.75); border-radius: 12px; padding: 6px 14px; text-align: center; min-width: 70px; }
+.stats small { display: block; font-size: 10px; letter-spacing: 1px; opacity: .7; }
+.stats b { font-size: 24px; }
+
+#overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(10,14,28,.55); }
+#overlay.hidden { display: none; }
+.card { background: #292a23; border-radius: 20px; padding: 28px 32px; max-width: 340px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+.card h2 { margin: 0 0 8px; color: #ffd84d; }
+.card p { line-height: 1.5; margin: 8px 0; }
+.card #final b { font-size: 32px; color: #d8fd71; }
+
+button, #signin { font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 12px 28px; cursor: pointer;
+  background: #d8fd71; color: #1b2338; text-decoration: none; display: inline-block; margin-top: 8px; }
+#signin { background: transparent; color: #d8fd71; border: 2px solid #d8fd71; margin-left: 6px; }
+#restartBtn { position: fixed; bottom: 16px; left: 16px; padding: 8px 18px; margin: 0; }
+
+#dpad { position: fixed; bottom: max(16px, env(safe-area-inset-bottom)); right: 16px; width: 168px; height: 168px; display: none;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr); gap: 4px; }
+#dpad button { margin: 0; padding: 0; font-size: 22px; border-radius: 16px; background: rgba(216,253,113,.8); }
+#dpad [data-dir=up] { grid-area: 1 / 2; } #dpad [data-dir=left] { grid-area: 2 / 1; }
+#dpad [data-dir=right] { grid-area: 2 / 3; } #dpad [data-dir=down] { grid-area: 3 / 2; }
+@media (pointer: coarse) { #dpad { display: grid; } }
